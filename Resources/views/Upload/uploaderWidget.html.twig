@@ -1,0 +1,24 @@
+<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Open gallery images</a>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <script src="{{ asset('bundles/raindropupload/ckfinder/ckfinder.js') }}"></script>
+    <script type="text/javascript">
+
+        // This is a sample function which is called when a file is selected in CKFinder.
+        function copyToClipboard( fileUrl, data, allFiles )
+        {
+            window.prompt("Copy to clipboard: Ctrl+C, Enter", data['fileUrl']);
+        }
+
+        // You can use the "CKFinder" class to render CKFinder in a page:
+        var finder = new CKFinder();
+
+        // The path for the installation of CKFinder (default = "/ckfinder/").
+        finder.basePath = '../';
+
+        // The default height is 400.
+        finder.height = 600;
+        // This is a sample function which is called when a file is selected in CKFinder.
+        finder.selectActionFunction = copyToClipboard;
+        finder.create();
+    </script>
+</div>

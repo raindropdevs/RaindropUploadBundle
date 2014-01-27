@@ -1,2 +1,2 @@
-RaindropUploadAssetsBundle
+RaindropUploadBundle
 ==========================
