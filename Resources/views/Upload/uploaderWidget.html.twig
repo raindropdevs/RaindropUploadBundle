@@ -22,5 +22,14 @@
         // This is a sample function which is called when a file is selected in CKFinder.
         finder.selectActionFunction = copyToClipboard;
         finder.create();
+        
+        //fix incompatibility between boostrap and CKFinder: WORKAROUND
+        $('a[href=#myModal]').on('click', function(){
+            $(document).on('focusin.bs.modal.cke_dialog_ui_input_text', function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    return false;
+            })
+        })
     </script>
 </div>
